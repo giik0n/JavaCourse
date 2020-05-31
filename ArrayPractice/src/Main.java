@@ -6,8 +6,6 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         ArrayList<String> words = new ArrayList<>();
-        String longestWord="";
-        int linesWithHarry = 0;
         try {
             Scanner scanner = new Scanner(new FileInputStream("harryPotterChapterOne.txt"));
             String currentLine;
@@ -15,17 +13,15 @@ public class Main {
                 currentLine = scanner.nextLine();
                 String[] wordsTmp = currentLine.split(" ");
                 for (int i=0;i<wordsTmp.length;i++){
-                    if (!wordsTmp.equals(" "))
-                        words.add(wordsTmp[i].replaceAll("[^a-zA-Z ]", ""));
+                    if (!wordsTmp.equals(" ")||!wordsTmp.equals("\n"))
+                        words.add(wordsTmp[i].replaceAll("[^a-zA-Z ]", ""));//Clean the words from a punctuation signs.
                 }
-
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         System.out.println(words);
-        words.sort(String::compareToIgnoreCase);
+        words.sort(String::compareToIgnoreCase);//Order the words in alphabetic order.
         System.out.println(words);
-        System.out.println(linesWithHarry);
     }
 }

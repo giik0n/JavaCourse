@@ -8,7 +8,7 @@ public class Main {
             if (i<4) {
                 System.out.println("I'm " + quialities[i]);
             }else if( i==4) {
-                System.out.print("And without costume ");
+                System.out.print("And without suite ");
                 System.out.print("I'm " + quialities[i]+", ");
             }else{
                 System.out.print(quialities[i]+", ");
@@ -23,9 +23,6 @@ public class Main {
                 System.out.println("X: "+ x + ", Y: "+y);
             }
         }
-
-
-
     }
 
     static boolean isPalindrome(String str){
