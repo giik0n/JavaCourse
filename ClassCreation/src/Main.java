@@ -12,6 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
         RectangularBox rectangularBox = new RectangularBox(0,10,25,20);
-        System.out.println(rectangularBox.getBasenamtDiagonalLength());
+        Rectangle rectangle = new Rectangle(20,20);
+        rectangle.toConsole();
     }
 }
