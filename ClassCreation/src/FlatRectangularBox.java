@@ -1,5 +1,10 @@
 import java.util.Objects;
-
+    /*
+        * @author Alexander Panishchev
+        *Task:
+        * Inheritance
+        2. Create another class as a super class for your one.  Or create a daughterly class for your one.
+        * */
 public class FlatRectangularBox extends  RectangularBox{
     int id, length, width;
     // Child class of RectangularBox
