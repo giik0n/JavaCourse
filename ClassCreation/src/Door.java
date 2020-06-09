@@ -62,4 +62,16 @@ public class Door extends Rectangle{
     public void setRightHanded(boolean rightHanded) {
         isRightHanded = rightHanded;
     }
+
+    @Override
+    public String toString() {
+        return getClass().getName()+" {" +
+                "length=" + length +
+                ", width=" + width +
+                ", material='" + material + '\'' +
+                ", color=" + color +
+                ", isLock=" + isLock +
+                ", isRightHanded=" + isRightHanded +
+                '}';
+    }
 }
