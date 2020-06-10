@@ -8,6 +8,10 @@ public class RectangularBoxFactory {
         *Task:
         * Develop for your class
             1. Factory.
+            *
+           @param length means Figure Length
+           @param width means Figure Width
+           @param height means Figure Height
         * */
 
         if (height>0) {
