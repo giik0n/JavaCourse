@@ -59,5 +59,12 @@ public class FlatRectangularBox extends  RectangularBox{
         return Objects.hash(this.id);
     }
 
-
-}
+        @Override
+        public String toString() {
+            return getClass().getName()+" {" +
+                    "id=" + id +
+                    ", length=" + length +
+                    ", width=" + width +
+                    '}';
+        }
+    }
