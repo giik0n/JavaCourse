@@ -7,13 +7,17 @@ import Interfaces.IGeometry;
         *Task:
         * Develop for your class
             2. Abstract factory.
-            *
-           @param length means Figure Length
-           @param width means Figure Width
-           @param height means Figure Height
     */
 
 public class AbstractFactory {
+
+    /*
+    * This method creates new RectangularBox object or FlatRectangularBox object
+    * @param length means Figure Length
+    * @param width means Figure Width
+    * @param height means Figure Height
+    * @return new RectangularBox or new FlatRectangularBox or null
+    * */
     public static IGeometry create(int length, int width, int height){
         if (height > 0){
             return new RectangularBox(length, width,height);
