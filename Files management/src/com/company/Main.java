@@ -19,7 +19,7 @@ import java.time.temporal.ChronoUnit;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        LogsManager logsManager = new LogsManager("logs.txt");
+        LogsManager logsManager = new LogsManager("logs.txt");//Set your logs file path here
 
         logsManager.extractToFile("2019-10","octoberLogs.txt");//(1) Creating new file
 
