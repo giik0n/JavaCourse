@@ -29,7 +29,7 @@ First moodle labwork.
 ### COMPANY Service implementation
 Simply shows shot we can implement service interface.
 There are two methods which finds topl level company, and counting company and childs employees.
-#### Output
+#### Test
     //Company{parent=null, employeesCount=2} means chief company
     Top level parent for design: Company{parent=null, employeesCount=2}
     Top level parent for developer: Company{parent=null, employeesCount=2}
