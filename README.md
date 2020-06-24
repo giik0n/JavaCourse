@@ -29,6 +29,17 @@ First moodle labwork.
 ### COMPANY Service implementation
 Simply shows shot we can implement service interface.
 There are two methods which finds topl level company, and counting company and childs employees.
+#### Output
+    //Company{parent=null, employeesCount=2} means chief company
+    Top level parent for design: Company{parent=null, employeesCount=2}
+    Top level parent for developer: Company{parent=null, employeesCount=2}
+    Top level parent for frontend: Company{parent=null, employeesCount=2}
+    Top level parent for lawyer: Company{parent=null, employeesCount=2}
+    Top level parent for accounting: Company{parent=null, employeesCount=10}
+    Chief and childs employees: 22
+    Accounting and childs employees: 10
+    Developer and childs employees: 10
+    Everything works awesome!)
 ### Mulithreading.
 This project comparing logs file parsing speed between one thread and five threads
 #### Output
