@@ -31,13 +31,22 @@ public class Main {
         System.out.println("One thread time: "+ ChronoUnit.MILLIS.between(oneThreadStart,oneThreadFinish)+"ms");
 
         LocalDateTime multiThreadStart = LocalDateTime.now();
-        new MyThread(file,"2019-10-20").start();
-        new MyThread(file,"2019-10-21").start();
-        new MyThread(file,"2019-10-22").start();
-        new MyThread(file,"2019-10-23").start();
-        new MyThread(file,"2019-10-25").start();
+        MyThread t1 = new MyThread(file,"2019-10-20");
+        t1.start();
+        MyThread t2 = new MyThread(file,"2019-10-21");
+        t2.start();
+        MyThread t3 = new MyThread(file,"2019-10-22");
+        t3.start();
+        MyThread t4 = new MyThread(file,"2019-10-23");
+        t4.start();
+        MyThread t5 = new MyThread(file,"2019-10-25");
+        t5.start();
         LocalDateTime multiThreadFinish = LocalDateTime.now();
-        System.out.println("Multi thread time: "+ ChronoUnit.MILLIS.between(multiThreadStart,multiThreadFinish)+"ms");
+        while(t1.isAlive() && t2.isAlive() && t3.isAlive() &&  t4.isAlive() &&  t5.isAlive()){
+            multiThreadFinish = LocalDateTime.now();
+
+        }
+        System.out.println("Multi threads time: "+ ChronoUnit.MILLIS.between(multiThreadStart,multiThreadFinish)+"ms");
 
     }
 
@@ -61,26 +70,26 @@ public class Main {
         }
     }
     //------------My Output----------------
-    //File: ERROR2019-10-15.txt starts at: 2020-06-24T14:31:32.515
-    //File: ERROR2019-10-15.txt finished at: 2020-06-24T14:31:33.977
-    //File: ERROR2019-10-16.txt starts at: 2020-06-24T14:31:33.977
-    //File: ERROR2019-10-16.txt finished at: 2020-06-24T14:31:34.870
-    //File: ERROR2019-10-17.txt starts at: 2020-06-24T14:31:34.870
-    //File: ERROR2019-10-17.txt finished at: 2020-06-24T14:31:35.710
-    //File: ERROR2019-10-18.txt starts at: 2020-06-24T14:31:35.710
-    //File: ERROR2019-10-18.txt finished at: 2020-06-24T14:31:36.556
-    //File: ERROR2019-10-19.txt starts at: 2020-06-24T14:31:36.556
-    //File: ERROR2019-10-19.txt finished at: 2020-06-24T14:31:37.391
-    //One thread time: 4893ms
-    //File: ERROR2019-10-20.txt starts at: 2020-06-24T14:31:37.394
-    //File: ERROR2019-10-22.txt starts at: 2020-06-24T14:31:37.394
-    //File: ERROR2019-10-21.txt starts at: 2020-06-24T14:31:37.394
-    //File: ERROR2019-10-23.txt starts at: 2020-06-24T14:31:37.395
-    //Multi thread time: 2ms
-    //File: ERROR2019-10-25.txt starts at: 2020-06-24T14:31:37.395
-    //File: ERROR2019-10-25.txt finished at: 2020-06-24T14:31:39.457
-    //File: ERROR2019-10-22.txt finished at: 2020-06-24T14:31:39.459
-    //File: ERROR2019-10-23.txt finished at: 2020-06-24T14:31:39.459
-    //File: ERROR2019-10-21.txt finished at: 2020-06-24T14:31:39.463
-    //File: ERROR2019-10-20.txt finished at: 2020-06-24T14:31:39.463
+    //File: ERROR2019-10-15.txt starts at: 2020-06-24T16:37:12.552
+    //File: ERROR2019-10-15.txt finished at: 2020-06-24T16:37:14.123
+    //File: ERROR2019-10-16.txt starts at: 2020-06-24T16:37:14.123
+    //File: ERROR2019-10-16.txt finished at: 2020-06-24T16:37:15.260
+    //File: ERROR2019-10-17.txt starts at: 2020-06-24T16:37:15.260
+    //File: ERROR2019-10-17.txt finished at: 2020-06-24T16:37:16.220
+    //File: ERROR2019-10-18.txt starts at: 2020-06-24T16:37:16.220
+    //File: ERROR2019-10-18.txt finished at: 2020-06-24T16:37:17.178
+    //File: ERROR2019-10-19.txt starts at: 2020-06-24T16:37:17.178
+    //File: ERROR2019-10-19.txt finished at: 2020-06-24T16:37:18.113
+    //One thread time: 5573ms
+    //File: ERROR2019-10-20.txt starts at: 2020-06-24T16:37:18.116
+    //File: ERROR2019-10-21.txt starts at: 2020-06-24T16:37:18.116
+    //File: ERROR2019-10-22.txt starts at: 2020-06-24T16:37:18.116
+    //File: ERROR2019-10-23.txt starts at: 2020-06-24T16:37:18.116
+    //File: ERROR2019-10-25.txt starts at: 2020-06-24T16:37:18.116
+    //File: ERROR2019-10-22.txt finished at: 2020-06-24T16:37:21.087
+    //Multi threads time: 2971ms
+    //File: ERROR2019-10-25.txt finished at: 2020-06-24T16:37:21.093
+    //File: ERROR2019-10-21.txt finished at: 2020-06-24T16:37:21.110
+    //File: ERROR2019-10-20.txt finished at: 2020-06-24T16:37:21.120
+    //File: ERROR2019-10-23.txt finished at: 2020-06-24T16:37:21.125
 }
