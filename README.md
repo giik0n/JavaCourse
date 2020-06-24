@@ -64,4 +64,4 @@ This project comparing logs file parsing speed between one thread and five threa
     File: ERROR2019-10-25.txt finished at: 2020-06-24T17:36:56.648
     File: ERROR2019-10-22.txt finished at: 2020-06-24T17:36:56.651
     File: ERROR2019-10-21.txt finished at: 2020-06-24T17:36:56.652
-Multi threads time: 2790ms
+    Multi threads time: 2790ms
