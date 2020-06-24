@@ -5,24 +5,33 @@ This repository contains Moodle Java Development (K) course.
 ## Technologies
 Java 8
 ## Description
-Array Practice - contains work with lines array from text file.
+### Array Practice
+Contains work with lines array from text file.
 
-Class Creation - explains java Inheritance and Polymorphism.
+### Class Creation
+Explains java Inheritance and Polymorphism.
 
-Cycle Practice - work with different types of cycles.
+### Cycle Practice
+Work with different types of cycles.
 
-Employees - second moodle labwork.
+### Employees
+Second moodle labwork.
 
-Files Management - logs file parser. Work with large files.
+### Files Management
+Logs file parser. Work with large files.
 
-JavaCollectionsFramework - contains comparing two types of List - Array
-list and LinkedList.
+### JavaCollectionsFramework
+Contains comparing two types of List - Array list and LinkedList.
 
-MoodleLab1 - first moodle labwork.
+### MoodleLab1
+First moodle labwork.
 
-# Mulithreading.
+### COMPANY Service implementation
+Simply shows shot we can implement service interface.
+There are two methods which finds topl level company, and counting company and childs employees.
+### Mulithreading.
 This project comparing logs file parsing speed between one thread and five threads
-## Output
+#### Output
     File: ERROR2019-10-15.txt starts at: 2020-06-24T16:37:12.552
     File: ERROR2019-10-15.txt finished at: 2020-06-24T16:37:14.123
     File: ERROR2019-10-16.txt starts at: 2020-06-24T16:37:14.123
