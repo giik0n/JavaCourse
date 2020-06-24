@@ -21,6 +21,7 @@ list and LinkedList.
 MoodleLab1 - first moodle labwork.
 
 # Mulithreading.
+This project comparing logs file parsing speed between one thread and five threads
 ## Output
     File: ERROR2019-10-15.txt starts at: 2020-06-24T16:37:12.552
     File: ERROR2019-10-15.txt finished at: 2020-06-24T16:37:14.123
