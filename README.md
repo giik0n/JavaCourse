@@ -43,25 +43,25 @@ There are two methods which finds topl level company, and counting company and c
 ### Mulithreading.
 This project comparing logs file parsing speed between one thread and five threads
 #### Output
-    File: ERROR2019-10-15.txt starts at: 2020-06-24T16:37:12.552
-    File: ERROR2019-10-15.txt finished at: 2020-06-24T16:37:14.123
-    File: ERROR2019-10-16.txt starts at: 2020-06-24T16:37:14.123
-    File: ERROR2019-10-16.txt finished at: 2020-06-24T16:37:15.260
-    File: ERROR2019-10-17.txt starts at: 2020-06-24T16:37:15.260
-    File: ERROR2019-10-17.txt finished at: 2020-06-24T16:37:16.220
-    File: ERROR2019-10-18.txt starts at: 2020-06-24T16:37:16.220
-    File: ERROR2019-10-18.txt finished at: 2020-06-24T16:37:17.178
-    File: ERROR2019-10-19.txt starts at: 2020-06-24T16:37:17.178
-    File: ERROR2019-10-19.txt finished at: 2020-06-24T16:37:18.113
-    One thread time: 5573ms
-    File: ERROR2019-10-20.txt starts at: 2020-06-24T16:37:18.116
-    File: ERROR2019-10-21.txt starts at: 2020-06-24T16:37:18.116
-    File: ERROR2019-10-22.txt starts at: 2020-06-24T16:37:18.116
-    File: ERROR2019-10-23.txt starts at: 2020-06-24T16:37:18.116
-    File: ERROR2019-10-25.txt starts at: 2020-06-24T16:37:18.116
-    File: ERROR2019-10-22.txt finished at: 2020-06-24T16:37:21.087
-    Multi threads time: 2971ms
-    File: ERROR2019-10-25.txt finished at: 2020-06-24T16:37:21.093
-    File: ERROR2019-10-21.txt finished at: 2020-06-24T16:37:21.110
-    File: ERROR2019-10-20.txt finished at: 2020-06-24T16:37:21.120
-    File: ERROR2019-10-23.txt finished at: 2020-06-24T16:37:21.125
+    File: ERROR2019-10-15.txt starts at: 2020-06-24T17:36:47.272
+    File: ERROR2019-10-15.txt finished at: 2020-06-24T17:36:49.439
+    File: ERROR2019-10-16.txt starts at: 2020-06-24T17:36:49.439
+    File: ERROR2019-10-16.txt finished at: 2020-06-24T17:36:50.917
+    File: ERROR2019-10-17.txt starts at: 2020-06-24T17:36:50.918
+    File: ERROR2019-10-17.txt finished at: 2020-06-24T17:36:52.122
+    File: ERROR2019-10-18.txt starts at: 2020-06-24T17:36:52.122
+    File: ERROR2019-10-18.txt finished at: 2020-06-24T17:36:53.001
+    File: ERROR2019-10-19.txt starts at: 2020-06-24T17:36:53.001
+    File: ERROR2019-10-19.txt finished at: 2020-06-24T17:36:53.859
+    One thread time: 6604ms
+    File: ERROR2019-10-20.txt starts at: 2020-06-24T17:36:53.863
+    File: ERROR2019-10-22.txt starts at: 2020-06-24T17:36:53.863
+    File: ERROR2019-10-21.txt starts at: 2020-06-24T17:36:53.863
+    File: ERROR2019-10-23.txt starts at: 2020-06-24T17:36:53.865
+    File: ERROR2019-10-25.txt starts at: 2020-06-24T17:36:53.865
+    File: ERROR2019-10-20.txt finished at: 2020-06-24T17:36:56.636
+    File: ERROR2019-10-23.txt finished at: 2020-06-24T17:36:56.646
+    File: ERROR2019-10-25.txt finished at: 2020-06-24T17:36:56.648
+    File: ERROR2019-10-22.txt finished at: 2020-06-24T17:36:56.651
+    File: ERROR2019-10-21.txt finished at: 2020-06-24T17:36:56.652
+Multi threads time: 2790ms
