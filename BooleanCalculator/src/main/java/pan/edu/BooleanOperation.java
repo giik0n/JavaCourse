@@ -4,20 +4,19 @@ public class BooleanOperation {
     private Boolean firstOne;
     private Boolean secondOne;
 
-    public BooleanOperation(boolean firstOne, boolean secondOne) {
+    public BooleanOperation(Boolean firstOne, Boolean secondOne) {
         this.firstOne = firstOne;
         this.secondOne = secondOne;
     }
 
-    public boolean conjunction(){
-        boolean result = false;
-        if (firstOne&&secondOne){
-            result = true;
-        }
-        if (firstOne==false ){
-            result = true;
-        }
-        return result;
+    public Boolean conjunction(){
+        if (firstOne == null||secondOne == null) return null;
+            return this.firstOne&&this.secondOne;
+    }
+    public Boolean disjunction(){
+        if (this.firstOne == null) return this.secondOne;
+        if (this.secondOne == null) return this.firstOne;
+        return this.firstOne||this.secondOne;
     }
 
     public BooleanOperation() {
@@ -27,7 +26,7 @@ public class BooleanOperation {
         return firstOne;
     }
 
-    public void setFirstOne(boolean firstOne) {
+    public void setFirstOne(Boolean firstOne) {
         this.firstOne = firstOne;
     }
 
@@ -35,7 +34,7 @@ public class BooleanOperation {
         return secondOne;
     }
 
-    public void setSecondOne(boolean secondOne) {
+    public void setSecondOne(Boolean secondOne) {
         this.secondOne = secondOne;
     }
 }

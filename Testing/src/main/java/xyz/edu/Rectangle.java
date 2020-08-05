@@ -3,7 +3,6 @@ package xyz.edu;
 import java.util.logging.Logger;
 
 public class Rectangle {
-    private static final Logger LOGGER = Logger.getLogger(Rectangle.class.getName());
     private double height, width;
 
     public Rectangle(double height, double width) {
@@ -31,7 +30,6 @@ public class Rectangle {
     }
 
     public double getArea(){
-        LOGGER.info("RECTANGLE_GET_AREA_INFO");
         return this.getHeight() * this.getWidth();
     }
 
