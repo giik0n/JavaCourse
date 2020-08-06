@@ -1,6 +1,8 @@
 package pan.edu.welcome_spring.service.cafedra.impls;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pan.edu.welcome_spring.dao.cafedra.impls.DaoCafedraImpl;
 import pan.edu.welcome_spring.model.Cafedra;
 import pan.edu.welcome_spring.service.cafedra.interfaces.ICafedraService;
 
@@ -10,6 +12,9 @@ import java.util.List;
 
 @Service
 public class CafedraServiceImpl implements ICafedraService {
+
+    @Autowired
+    DaoCafedraImpl daoCafedra;
 
     @Override
     public Cafedra create(Cafedra cafedra) {
@@ -33,6 +38,6 @@ public class CafedraServiceImpl implements ICafedraService {
 
     @Override
     public List<Cafedra> getAll() {
-        return null;
+        return daoCafedra.getAll();
     }
 }

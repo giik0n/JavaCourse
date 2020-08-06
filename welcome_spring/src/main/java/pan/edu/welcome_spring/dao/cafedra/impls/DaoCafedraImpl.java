@@ -1,12 +1,18 @@
 package pan.edu.welcome_spring.dao.cafedra.impls;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 import pan.edu.welcome_spring.dao.cafedra.interfaces.IDaoCafedra;
+import pan.edu.welcome_spring.datastorage.DataFake;
 import pan.edu.welcome_spring.model.Cafedra;
 
 import java.util.List;
 
+@Repository
 public class DaoCafedraImpl implements IDaoCafedra {
 
+    @Autowired
+    DataFake dataFake;
 
     @Override
     public Cafedra create(Cafedra cafedra) {
@@ -30,6 +36,6 @@ public class DaoCafedraImpl implements IDaoCafedra {
 
     @Override
     public List<Cafedra> getAll() {
-        return null;
+        return dataFake.getCafedras();
     }
 }
