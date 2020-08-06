@@ -1,2 +1,4 @@
-package pan.edu.welcome_spring.model;public class Group {
+package pan.edu.welcome_spring.model;
+
+public class Group {
 }

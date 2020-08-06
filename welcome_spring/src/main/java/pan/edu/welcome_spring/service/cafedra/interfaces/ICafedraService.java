@@ -1,2 +1,13 @@
-package pan.edu.welcome_spring.service.cafedra.interfaces;public class ICafedraService {
+package pan.edu.welcome_spring.service.cafedra.interfaces;
+
+import pan.edu.welcome_spring.model.Cafedra;
+
+import java.util.List;
+
+public interface ICafedraService {
+    Cafedra create(Cafedra cafedra);
+    Cafedra get(String id);
+    Cafedra delete(String id);
+    Cafedra update(Cafedra cafedra);
+    List<Cafedra> getAll();
 }

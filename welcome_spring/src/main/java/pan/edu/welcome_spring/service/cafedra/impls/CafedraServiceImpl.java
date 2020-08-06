@@ -9,13 +9,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Service
-public class CafedraService implements ICafedraService {
-
-    List<Cafedra> cafedras = new LinkedList<>(Arrays.asList(
-            new Cafedra("IPZ","Ivanov","Engineering"),
-            new Cafedra("KN","Petrol","MSOffice"),
-            new Cafedra("IT","Pshek","VojtiVIT")
-    ));
+public class CafedraServiceImpl implements ICafedraService {
 
     @Override
     public Cafedra create(Cafedra cafedra) {
@@ -39,6 +33,6 @@ public class CafedraService implements ICafedraService {
 
     @Override
     public List<Cafedra> getAll() {
-        return cafedras;
+        return null;
     }
 }
