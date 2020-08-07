@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 import pan.edu.welcome_spring.model.Cafedra;
 import pan.edu.welcome_spring.model.Group;
 import pan.edu.welcome_spring.repository.CafedraRepository;
+import pan.edu.welcome_spring.repository.GroupRepository;
 
 import javax.annotation.PostConstruct;
 import java.util.Arrays;
@@ -15,6 +16,9 @@ import java.util.List;
 public class DataFake {
     @Autowired
     CafedraRepository cafedraRepository;
+    @Autowired
+    GroupRepository groupRepository;
+
 
     private List<Cafedra> cafedras = new LinkedList<>(Arrays.asList(
             new Cafedra("IPZ","Ivanov","Engineering"),
@@ -22,16 +26,21 @@ public class DataFake {
             new Cafedra("IT","Pshek","VojtiVIT")
     ));
 
-    //@PostConstruct
+    private List<Group> groups = new LinkedList<>(Arrays.asList(
+            new Group("543","ChNU",cafedras.get(0)),
+            new Group("KN-42","UzhNU",cafedras.get(1)),
+            new Group("6.04.51.15.01","KhNEU",cafedras.get(2))
+    ));
+
+    @PostConstruct
     private void init(){
+        cafedraRepository.deleteAll();
         cafedraRepository.saveAll(cafedras);
+        groupRepository.deleteAll();
+        groupRepository.saveAll(groups);
     }
 
-    private List<Group> groups = new LinkedList<>(Arrays.asList(
-            new Group("1","543","ChNU",cafedras.get(0)),
-            new Group("2","KN-42","UzhNU",cafedras.get(1)),
-            new Group("3","6.04.51.15.01","KhNEU",cafedras.get(2))
-    ));
+
 
     public List<Group> getGroups() {
         return groups;

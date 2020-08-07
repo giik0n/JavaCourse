@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pan.edu.welcome_spring.dao.group.impls.DaoGroupImpl;
 import pan.edu.welcome_spring.model.Group;
+import pan.edu.welcome_spring.repository.GroupRepository;
 import pan.edu.welcome_spring.service.group.interfaces.IGroupService;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
 public class GroupServiceImpl implements IGroupService {
 
    @Autowired
-   DaoGroupImpl daoGroup;
+   GroupRepository groupRepository;
 
     @Override
     public Group create(Group group) {
@@ -35,6 +36,6 @@ public class GroupServiceImpl implements IGroupService {
 
     @Override
     public List<Group> getAll() {
-        return daoGroup.getAll();
+        return groupRepository.findAll();
     }
 }
