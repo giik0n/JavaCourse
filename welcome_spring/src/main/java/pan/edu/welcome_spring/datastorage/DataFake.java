@@ -1,21 +1,31 @@
 package pan.edu.welcome_spring.datastorage;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import pan.edu.welcome_spring.model.Cafedra;
 import pan.edu.welcome_spring.model.Group;
+import pan.edu.welcome_spring.repository.CafedraRepository;
 
+import javax.annotation.PostConstruct;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 @Repository
 public class DataFake {
+    @Autowired
+    CafedraRepository cafedraRepository;
 
     private List<Cafedra> cafedras = new LinkedList<>(Arrays.asList(
-            new Cafedra("1","IPZ","Ivanov","Engineering"),
-            new Cafedra("2","KN","Petrol","MSOffice"),
-            new Cafedra("3","IT","Pshek","VojtiVIT")
+            new Cafedra("IPZ","Ivanov","Engineering"),
+            new Cafedra("KN","Petrol","MSOffice"),
+            new Cafedra("IT","Pshek","VojtiVIT")
     ));
+
+    //@PostConstruct
+    private void init(){
+        cafedraRepository.saveAll(cafedras);
+    }
 
     private List<Group> groups = new LinkedList<>(Arrays.asList(
             new Group("1","543","ChNU",cafedras.get(0)),
