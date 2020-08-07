@@ -1,5 +1,12 @@
 package pan.edu;
 
+/*
+ * @author Alexander Panyshchev
+ * @since 8/7/20
+ * @version 1.0
+ *Task: Create and test boolean operations
+ */
+
 public class BooleanOperation {
     private Boolean firstOne;
     private Boolean secondOne;

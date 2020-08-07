@@ -5,6 +5,13 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/*
+ * @author Alexander Panyshchev
+ * @since 8/7/20
+ * @version 1.0
+ *Task: Test all combinations
+ */
+
 public class BooleanOperationTest {
 
     BooleanOperation booleanOperation00 = new BooleanOperation(false,false);

@@ -2,17 +2,27 @@ package xyz.edu;
 
 import java.util.logging.Logger;
 
+/*
+ * @author Alexander Panyshchev
+ * @since 8/7/20
+ * @version 1.0
+ *Task: Create and test rectangle
+ */
+
 public class Rectangle {
     private double height, width;
+
+    //------------Constructors---------------------
+    public Rectangle() {
+    }
 
     public Rectangle(double height, double width) {
         this.height = height;
         this.width = width;
     }
+    //------------Constructors---------------------
 
-    public Rectangle() {
-    }
-
+    //------------Getters/Setters------------------
     public double getHeight() {
         return height;
     }
@@ -32,7 +42,9 @@ public class Rectangle {
     public double getArea(){
         return this.getHeight() * this.getWidth();
     }
+    //------------Getters/Setters------------------
 
+    //@return perimeter of rectangle
     public double getPerimeter(){
         return 2 * (this.getHeight() + this.getWidth());
     }

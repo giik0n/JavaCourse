@@ -2,16 +2,18 @@ package xyz.edu;
 
 import java.util.Objects;
 
+/*
+ * @author Alexander Panyshchev
+ * @since 8/7/20
+ * @version 1.0
+ *Task: Create and test RectanglularBox
+ */
+
 public class RectangularBox{
     private int id, length, width, height;
 
-    public RectangularBox(int id, int length, int width, int height) {
-        this.id = id;
-        this.length = length;
-        this.width = width;
-        this.height = height;
-    }
 
+    //------------Constructors---------------------
     public RectangularBox() {
     }
 
@@ -21,31 +23,44 @@ public class RectangularBox{
         this.height = height;
     }
 
+    public RectangularBox(int id, int length, int width, int height) {
+        this.id = id;
+        this.length = length;
+        this.width = width;
+        this.height = height;
+    }
+
+    //------------Constructors---------------------
+
+    //@return total area of all surfaces
     public int getTotalArea(){
         return (this.height * this.width)*2
                 + (this.height * this.length)*2
                 + (this.length * this.width)*2;
     }
-
+    //@return total area of base surfaces
     public int getBasementArea(){
         return this.length * this.width;
     }
-
+    //@return capacity of RectangularBox
     public int getCapacity(){
         return this.height * this.width * this.length;
     }
 
+    //@return diagonal length of RectangularBox
     public  double getDiagonalLength(){
         return Math.sqrt(
                 Math.pow(this.height,2)
               + Math.pow(this.length,2)
               + Math.pow(this.width,2));
     }
+
+    //@return diagonal length of RectangularBox basement
     public  double getBasementDiagonalLength(){
         return Math.sqrt(Math.pow(this.length,2) + Math.pow(this.width,2));
     }
 
-    //------------Getters-Setters------------------
+    //------------Getters/Setters------------------
     public int getLength() {
         return length;
     }
@@ -76,61 +91,5 @@ public class RectangularBox{
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    @Override
-    public String toString() {
-        return getClass().getName()+" {" +
-                "id=" + id +
-                ", length=" + length +
-                ", width=" + width +
-                ", height=" + height +
-                '}';
-    }
-
-    public String toJSON() {
-        return getClass().getName()+" {"
-                + "\""  + "length\":" + this.getLength()
-                + ","
-                + "\""  + "width\":" + this.getWidth()
-                + ","
-                + "\""  + "height\":" + this.getHeight()
-                + "}";
-    }
-
-    public String toXML() {
-        return "<"+getClass().getName()+">"
-                + "<length>" + this.getLength() + "</length>"
-                + "<width>" + this.getWidth() + "</width>"
-                + "<height>" + this.getWidth() + "</height>"
-                +  "</"+getClass().getName()+">";
-    }
-
-    public void toConsole() {
-        System.out.println("----------------------"
-                + "\n Shape: " + getClass().getName()
-                + "\n Length: " + this.length
-                + "\n Width: " + this.width
-                + "\n Height: " + this.height
-                + "\n----------------------");
-    }
-
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        RectangularBox that = (RectangularBox) o;
-        return id == that.id;
-    }
-
-    public int hashCode() {
-        return Objects.hash(id);
-    }
-
-    public double getArea() {
-        return getTotalArea();
-    }
-
-    public double getLinearLength() {
-        return getLength();
     }
 }

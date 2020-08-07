@@ -1,5 +1,10 @@
 package xyz.edu;
-
+/*
+ * @author Alexander Panyshchev
+ * @since 8/7/20
+ * @version 1.0
+ *Task: Create and test Rectangle, RectangularBox and PalindromeService classes
+ */
 public class Main {
     public static void main(String[] args) {
         String abba = "abba";
@@ -8,6 +13,6 @@ public class Main {
         System.out.println(PalindromeService.isValid(abba));
 
         RectangularBox rectangularBox = new RectangularBox(0, 2,3,4);
-        System.out.println(rectangularBox.getArea());
+        System.out.println(rectangularBox.getTotalArea());
     }
 }
