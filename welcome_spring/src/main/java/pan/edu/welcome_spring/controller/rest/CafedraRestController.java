@@ -9,7 +9,7 @@ import pan.edu.welcome_spring.model.Cafedra;
 import pan.edu.welcome_spring.service.cafedra.impls.CafedraServiceImpl;
 
 import java.util.List;
-
+@RequestMapping("/api/cafedra")
 @RestController
 public class CafedraRestController {
 
@@ -21,7 +21,7 @@ public class CafedraRestController {
         return "<h1>Hello form Cafedra Controller</h1>";
     }
 
-    @RequestMapping(value = "/cafedra/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.GET)
     List<Cafedra> getCafedrasList(){
         return cafedraService.getAll();
     }

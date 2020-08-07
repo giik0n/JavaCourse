@@ -2,6 +2,7 @@ package pan.edu.welcome_spring.datastorage;
 
 import org.springframework.stereotype.Repository;
 import pan.edu.welcome_spring.model.Cafedra;
+import pan.edu.welcome_spring.model.Group;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -15,6 +16,20 @@ public class DataFake {
             new Cafedra("2","KN","Petrol","MSOffice"),
             new Cafedra("3","IT","Pshek","VojtiVIT")
     ));
+
+    private List<Group> groups = new LinkedList<>(Arrays.asList(
+            new Group("1","543","ChNU",cafedras.get(0)),
+            new Group("2","KN-42","UzhNU",cafedras.get(1)),
+            new Group("3","6.04.51.15.01","KhNEU",cafedras.get(2))
+    ));
+
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
+    }
 
     public List<Cafedra> getCafedras() {
         return cafedras;
