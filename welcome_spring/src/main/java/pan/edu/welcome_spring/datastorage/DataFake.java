@@ -40,8 +40,6 @@ public class DataFake {
         groupRepository.saveAll(groups);
     }
 
-
-
     public List<Group> getGroups() {
         return groups;
     }
