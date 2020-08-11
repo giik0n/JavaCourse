@@ -13,6 +13,7 @@
             <th>Name</th>
             <th>Description </th>
             <th>Chief</th>
+            <!--<th>Info</th>-->
             <th>Delete</th>
         </tr>
         <#list list as item>
@@ -20,12 +21,35 @@
                 <td>${item.name}</td>
                 <td>${item.desc}</td>
                 <td>${item.chief}</td>
+                <!--<td><a href="http://localhost:8080/web/cafedra/get/${item.id}">
+                        <input type="button" value="info" class="btn btn-primary">
+                    </a> </td>-->
                 <td><a href="http://localhost:8080/web/cafedra/delete/${item.id}">
                         <input type="button" value="delete" class="btn-danger">
                     </a> </td>
             </tr>
         </#list>
     </table>
+    <div>
+        <a href="/web/cafedra/reloadDB">
+                <input type="button", value="Reload Database" style="
+                        background-color: aquamarine;
+                        border-color: aqua;
+                        border-radius: 30px;
+                        border-width: 10px;
+
+                "></a>
+    </div>
+    <div>
+        <a href="/web/cafedra/create">
+        <input type="button" value="Create Cafedra From" style="
+                        background-color: aquamarine;
+                        border-color: aqua;
+                        border-radius: 30px;
+                        border-width: 10px;
+                ">
+        </a>
+    </div>
 
 </div>
 </body>

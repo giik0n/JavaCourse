@@ -33,7 +33,7 @@ public class DataFake {
     ));
 
     @PostConstruct
-    private void init(){
+    public void init(){
         cafedraRepository.deleteAll();
         cafedraRepository.saveAll(cafedras);
         groupRepository.deleteAll();
