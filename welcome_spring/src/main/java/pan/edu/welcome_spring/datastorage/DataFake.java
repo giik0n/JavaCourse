@@ -32,7 +32,7 @@ public class DataFake {
             new Group("6.04.51.15.01","KhNEU",cafedras.get(2))
     ));
 
-    @PostConstruct
+    //@PostConstruct
     public void init(){
         cafedraRepository.deleteAll();
         cafedraRepository.saveAll(cafedras);

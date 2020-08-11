@@ -18,6 +18,12 @@ public class Cafedra {
     public Cafedra() {
     }
 
+    public Cafedra(String name, String chief, String desc) {
+        this.name = name;
+        this.chief = chief;
+        this.desc = desc;
+    }
+
     public Cafedra(String id, String name, String chief, String desc) {
         this.id = id;
         this.name = name;
@@ -25,11 +31,7 @@ public class Cafedra {
         this.desc = desc;
     }
 
-    public Cafedra(String name, String chief, String desc) {
-        this.name = name;
-        this.chief = chief;
-        this.desc = desc;
-    }
+
 
     public Cafedra(String id, String name, String chief, String desc, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;

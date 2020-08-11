@@ -14,6 +14,7 @@
             <th>Description </th>
             <th>Chief</th>
             <!--<th>Info</th>-->
+            <th>Update</th>
             <th>Delete</th>
         </tr>
         <#list list as item>
@@ -24,6 +25,9 @@
                 <!--<td><a href="http://localhost:8080/web/cafedra/get/${item.id}">
                         <input type="button" value="info" class="btn btn-primary">
                     </a> </td>-->
+                <td><a href="http://localhost:8080/web/cafedra/update/${item.id}">
+                        <input type="button" value="update" class="btn-primary">
+                    </a> </td>
                 <td><a href="http://localhost:8080/web/cafedra/delete/${item.id}">
                         <input type="button" value="delete" class="btn-danger">
                     </a> </td>
