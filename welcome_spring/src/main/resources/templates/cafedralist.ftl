@@ -13,12 +13,16 @@
             <th>Name</th>
             <th>Description </th>
             <th>Chief</th>
+            <th>Delete</th>
         </tr>
         <#list list as item>
             <tr>
                 <td>${item.name}</td>
                 <td>${item.desc}</td>
                 <td>${item.chief}</td>
+                <td><a href="http://localhost:8080/web/cafedra/delete/${item.id}">
+                        <input type="button" value="delete" class="btn-danger">
+                    </a> </td>
             </tr>
         </#list>
     </table>

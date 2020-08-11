@@ -1,6 +1,7 @@
 package pan.edu.welcome_spring.controller.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pan.edu.welcome_spring.model.Cafedra;
 import pan.edu.welcome_spring.service.cafedra.impls.CafedraServiceImpl;
@@ -33,6 +34,7 @@ public class CafedraRestController {
     Cafedra getCafedra(@PathVariable("id") String id){
         return cafedraService.get(id);
     }
+
 
 
 }
