@@ -14,7 +14,6 @@ public class CafedraRestController {
     @Autowired
     CafedraServiceImpl cafedraService;
 
-
     @RequestMapping("")
     String getIndex(){
         return "<h1>Index Web Controller</h1>";
@@ -26,25 +25,25 @@ public class CafedraRestController {
         return "<h1>Hello form Cafedra Controller</h1>";
     }
 
-    @RequestMapping(value = "/get/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     List<Cafedra> getCafedrasList(){
         return cafedraService.getAll();
     }
 
-    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     Cafedra getCafedra(@PathVariable("id") String id){
         return cafedraService.get(id);
     }
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     Cafedra deleteCafedra(@PathVariable("id") String id){
         return cafedraService.delete(id);
     }
-    @RequestMapping(value = "/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.POST)
 
     Cafedra createCafedra(@RequestBody Cafedra cafedra){
         return cafedraService.create(cafedra);
     }
-    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @RequestMapping(value = "/", method = RequestMethod.PUT)
     Cafedra updateCafedra(@RequestBody Cafedra cafedra){
         return cafedraService.update(cafedra);
     }
