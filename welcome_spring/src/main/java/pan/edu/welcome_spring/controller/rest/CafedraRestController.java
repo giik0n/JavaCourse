@@ -7,7 +7,7 @@ import pan.edu.welcome_spring.model.Cafedra;
 import pan.edu.welcome_spring.service.cafedra.impls.CafedraServiceImpl;
 
 import java.util.List;
-@RequestMapping("/api/cafedra")
+@RequestMapping("/api/cafedra/v2")
 @RestController
 public class CafedraRestController {
 
@@ -34,15 +34,17 @@ public class CafedraRestController {
     Cafedra getCafedra(@PathVariable("id") String id){
         return cafedraService.get(id);
     }
+
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     Cafedra deleteCafedra(@PathVariable("id") String id){
         return cafedraService.delete(id);
     }
-    @RequestMapping(value = "/", method = RequestMethod.POST)
 
+    @RequestMapping(value = "/", method = RequestMethod.POST)
     Cafedra createCafedra(@RequestBody Cafedra cafedra){
         return cafedraService.create(cafedra);
     }
+
     @RequestMapping(value = "/", method = RequestMethod.PUT)
     Cafedra updateCafedra(@RequestBody Cafedra cafedra){
         return cafedraService.update(cafedra);

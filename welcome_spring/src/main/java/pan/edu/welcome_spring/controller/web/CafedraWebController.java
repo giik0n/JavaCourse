@@ -14,12 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pan.edu.welcome_spring.form.CafedraForm;
 import pan.edu.welcome_spring.model.Cafedra;
-import pan.edu.welcome_spring.model.Group;
-import pan.edu.welcome_spring.repository.CafedraRepository;
 import pan.edu.welcome_spring.service.cafedra.impls.CafedraServiceImpl;
-
-import java.util.Map;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/web/cafedra")
@@ -31,8 +26,7 @@ public class CafedraWebController {
     @RequestMapping(value = "/get/list", method =RequestMethod.GET)
     String showAll(Model model){
         model.addAttribute("list",cafedraService.getAll());
-
-        return "cafedralist";
+        return "cafedraList";
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)

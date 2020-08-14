@@ -38,4 +38,5 @@ public class GroupServiceImpl implements IGroupService {
     public List<Group> getAll() {
         return groupRepository.findAll();
     }
+
 }

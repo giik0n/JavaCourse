@@ -9,6 +9,10 @@
 </head>
 <body>
 <div>
+<form method="post">
+    <input type="text" value="" name="search">
+    <input type="submit" value="Go" onclick="">
+</form>
     <table class="table table-striped table-dark">
         <tr>
             <th>Name</th>
