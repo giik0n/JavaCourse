@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Cafedras List</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
 </head>
 <body>
 <div>
@@ -13,7 +14,7 @@
             <th>Name</th>
             <th>Description </th>
             <th>Chief</th>
-            <!--<th>Info</th>-->
+            <th>Info</th>
             <th>Update</th>
             <th>Delete</th>
         </tr>
@@ -22,9 +23,9 @@
                 <td>${item.name}</td>
                 <td>${item.desc}</td>
                 <td>${item.chief}</td>
-                <!--<td><a href="http://localhost:8080/web/cafedra/get/${item.id}">
-                        <input type="button" value="info" class="btn btn-primary">
-                    </a> </td>-->
+                <td><a href="http://localhost:8080/web/cafedra/get/${item.id}">
+                        <input type="button" value="info" class="btn btn-primary" onclick=alert("IHateWeb")>
+                    </a> </td>
                 <td><a href="http://localhost:8080/web/cafedra/update/${item.id}">
                         <input type="button" value="update" class="btn-primary">
                     </a> </td>
@@ -54,7 +55,7 @@
                 ">
         </a>
     </div>
-
 </div>
 </body>
+
 </html>

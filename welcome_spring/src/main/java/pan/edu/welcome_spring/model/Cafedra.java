@@ -23,7 +23,6 @@ public class Cafedra {
         this.chief = chief;
         this.desc = desc;
     }
-
     public Cafedra(String id, String name, String chief, String desc) {
         this.id = id;
         this.name = name;

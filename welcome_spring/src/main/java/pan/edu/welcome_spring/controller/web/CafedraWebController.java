@@ -31,6 +31,7 @@ public class CafedraWebController {
     @RequestMapping(value = "/get/list", method =RequestMethod.GET)
     String showAll(Model model){
         model.addAttribute("list",cafedraService.getAll());
+
         return "cafedralist";
     }
 
@@ -44,7 +45,8 @@ public class CafedraWebController {
     String getCafedraInfo(@PathVariable("id") String id, Model model){
         Cafedra cafedra = cafedraService.get(id);
         model.addAttribute("list",cafedraService.getAll());
-        return cafedra.toString();
+        model.addAttribute("info", cafedra.toString());
+        return "redirect:/web/cafedra/get/list";
     }
 
     @RequestMapping("/reloadDB")
