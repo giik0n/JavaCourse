@@ -7,26 +7,29 @@ package pan.edu.mysqltesting.demo;
  */
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Genre {
     @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-    private String name, desc;
+    private String name, description;
 
     public Genre() {
     }
 
-    public Genre(String name, String desc) {
+    public Genre(String name, String description) {
         this.name = name;
-        this.desc = desc;
+        this.description = description;
     }
 
-    public Genre(Long id, String name, String desc) {
+    public Genre(Long id, String name, String description) {
         this.id = id;
         this.name = name;
-        this.desc = desc;
+        this.description = description;
     }
 
     public Long getId() {
@@ -45,11 +48,11 @@ public class Genre {
         this.name = name;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String desc) {
+        this.description = desc;
     }
 }
