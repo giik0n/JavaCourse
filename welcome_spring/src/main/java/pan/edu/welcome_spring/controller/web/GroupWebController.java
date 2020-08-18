@@ -50,7 +50,6 @@ public class GroupWebController {
         for (Cafedra cafedra:cafedraService.getAll()) {
             movs.put(cafedra.getId(), cafedra.getName());
         }
-        System.out.println(movs);
         model.addAttribute("movs",movs);
         model.addAttribute("groupForm", groupForm);
         return "addGroup";
@@ -58,19 +57,11 @@ public class GroupWebController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public String createGroup(Model model, @ModelAttribute("groupForm") GroupForm groupForm){
-        System.out.println(groupForm.toString());
-        Group group = new Group();
-        group.setName(groupForm.getName());
-        group.setDesc(groupForm.getDesc());
-        Cafedra cafedra = cafedraService.get(groupForm.getCafedra());
-        group.setCafedra(cafedra);
-        System.out.println(group);
+        Group group = new Group();//создаем новую группу для добавление в БД
+        group.setName(groupForm.getName());//устанавливаем ей значение имени из формы
+        group.setDesc(groupForm.getDesc());//устанавливаем ей значение описания из формы
+        group.setCafedra(groupForm.getCafedra());//устанавливаем  нашей группе значение новой кафедры
         groupService.create(group);
-
-        for (Group group1: groupService.getAll()){
-            System.out.println(group1.getId());
-        }
-
         model.addAttribute("groups", groupService.getAll());
         return "redirect:/web/group/get/list";
     }

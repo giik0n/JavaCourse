@@ -5,24 +5,26 @@ package pan.edu.welcome_spring.form;
  * @version 1.0
  */
 
+import pan.edu.welcome_spring.model.Cafedra;
+
 import java.util.Objects;
 
 public class GroupForm {
     private String id;
     private String name;
     private String desc;
-    private String cafedra;
+    private Cafedra cafedra;
 
     public GroupForm() {
     }
 
-    public GroupForm(String name, String desc, String cafedra) {
+    public GroupForm(String name, String desc, Cafedra cafedra) {
         this.name = name;
         this.desc = desc;
         this.cafedra = cafedra;
     }
 
-    public GroupForm(String id, String name, String desc, String cafedra) {
+    public GroupForm(String id, String name, String desc, Cafedra cafedra) {
         this.id = id;
         this.name = name;
         this.desc = desc;
@@ -53,11 +55,11 @@ public class GroupForm {
         this.desc = desc;
     }
 
-    public String getCafedra() {
+    public Cafedra getCafedra() {
         return cafedra;
     }
 
-    public void setCafedra(String cafedra) {
+    public void setCafedra(Cafedra cafedra) {
         this.cafedra = cafedra;
     }
 
