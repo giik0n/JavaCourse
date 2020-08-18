@@ -24,28 +24,9 @@
                 <td>${item.name}</td>
                 <td>${item.desc}</td>
                 <td>${item.cafedra.name}</td>
-                <td><a href="http://localhost:8080/web/group/get/${item.id}">
-                        <input type="button" value="info" class="btn btn-primary" onclick=alert("IHateWeb")>
-                    </a> </td>
-                <td><a href="http://localhost:8080/web/group/update/${item.id}">
-                        <input type="button" value="update" class="btn-primary">
-                    </a> </td>
-                <td><a href="http://localhost:8080/web/group/delete/${item.id}">
-                        <input type="button" value="delete" class="btn-danger">
-                    </a> </td>
             </tr>
         </#list>
     </table>
-    <div>
-        <a href="/web/group/reloadDB">
-                <input type="button", value="Reload Database" style="
-                        background-color: aquamarine;
-                        border-color: aqua;
-                        border-radius: 30px;
-                        border-width: 10px;
-
-                "></a>
-    </div>
     <div>
         <a href="/web/group/create">
         <input type="button" value="Create Group From" style="

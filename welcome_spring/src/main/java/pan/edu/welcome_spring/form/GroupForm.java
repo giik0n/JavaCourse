@@ -5,8 +5,6 @@ package pan.edu.welcome_spring.form;
  * @version 1.0
  */
 
-import pan.edu.welcome_spring.model.Cafedra;
-
 import java.util.Objects;
 
 public class GroupForm {
@@ -59,7 +57,7 @@ public class GroupForm {
         return cafedra;
     }
 
-    public void setCafedra(String chief) {
+    public void setCafedra(String cafedra) {
         this.cafedra = cafedra;
     }
 
@@ -82,7 +80,7 @@ public class GroupForm {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", desc='" + desc + '\'' +
-                ", chief='" + cafedra + '\'' +
+                ", cafedra='" + cafedra + '\'' +
                 '}';
     }
 }

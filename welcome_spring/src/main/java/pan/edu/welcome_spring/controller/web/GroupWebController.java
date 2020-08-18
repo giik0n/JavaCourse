@@ -12,8 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import pan.edu.welcome_spring.form.CafedraForm;
 import pan.edu.welcome_spring.form.GroupForm;
 import pan.edu.welcome_spring.model.Cafedra;
 import pan.edu.welcome_spring.model.Group;
@@ -52,6 +50,7 @@ public class GroupWebController {
         for (Cafedra cafedra:cafedraService.getAll()) {
             movs.put(cafedra.getId(), cafedra.getName());
         }
+        System.out.println(movs);
         model.addAttribute("movs",movs);
         model.addAttribute("groupForm", groupForm);
         return "addGroup";
@@ -59,11 +58,13 @@ public class GroupWebController {
 
     @RequestMapping(value = "/create", method = RequestMethod.POST)
     public String createGroup(Model model, @ModelAttribute("groupForm") GroupForm groupForm){
+        System.out.println(groupForm.toString());
         Group group = new Group();
         group.setName(groupForm.getName());
         group.setDesc(groupForm.getDesc());
-        Cafedra cafedra = cafedraService.get(groupForm.getId());
+        Cafedra cafedra = cafedraService.get(groupForm.getCafedra());
         group.setCafedra(cafedra);
+        System.out.println(group);
         groupService.create(group);
 
         for (Group group1: groupService.getAll()){
