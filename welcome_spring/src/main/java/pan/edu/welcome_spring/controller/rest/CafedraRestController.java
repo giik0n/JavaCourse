@@ -25,6 +25,7 @@ public class CafedraRestController {
         return "<h1>Hello form Cafedra Controller</h1>";
     }
 
+    @CrossOrigin
     @RequestMapping(value = "/", method = RequestMethod.GET)
     List<Cafedra> getCafedrasList(){
         return cafedraService.getAll();

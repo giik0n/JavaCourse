@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pan.edu.welcome_spring.form.GroupForm;
@@ -36,10 +37,16 @@ public class GroupWebController {
 
         movs = new HashMap<>();
 
-
     }
     @RequestMapping(value = "/get/list", method = RequestMethod.GET)
     String getAll(Model model){
+       model.addAttribute("list",groupService.getAll());
+       return "groupList";
+    }
+
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    String deleteGroup(@PathVariable("id") String id,  Model model){
+        groupService.delete(id);
        model.addAttribute("list",groupService.getAll());
        return "groupList";
     }

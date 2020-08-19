@@ -8,6 +8,7 @@
 
 </head>
 <body>
+<a href="/">Home</a>
 <div>
 <form method="post">
     <input type="text" value="" name="search">
@@ -18,12 +19,16 @@
             <th>Name</th>
             <th>Description </th>
             <th>Cafedra</th>
+            <th>Delete</th>
         </tr>
         <#list list as item>
             <tr>
                 <td>${item.name}</td>
                 <td>${item.desc}</td>
                 <td>${item.cafedra.name}</td>
+                <td><a href="http://localhost:8080/web/group/delete/${item.id}">
+                        <input type="button" value="delete" class="btn-danger">
+                    </a> </td>
             </tr>
         </#list>
     </table>

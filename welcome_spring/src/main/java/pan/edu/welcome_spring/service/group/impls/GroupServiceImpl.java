@@ -54,7 +54,8 @@ public class GroupServiceImpl implements IGroupService {
 
     @Override
     public Group delete(String id) {
-        return null;
+        groupRepository.deleteById(id);
+        return groupRepository.findById(id).orElse(null);
     }
 
     @Override
