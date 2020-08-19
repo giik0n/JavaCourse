@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import pan.edu.welcome_spring.form.CafedraForm;
 import pan.edu.welcome_spring.form.GroupForm;
 import pan.edu.welcome_spring.model.Cafedra;
 import pan.edu.welcome_spring.model.Group;
@@ -36,6 +37,9 @@ public class GroupWebController {
     void init(){
 
         movs = new HashMap<>();
+        for (Cafedra cafedra:cafedraService.getAll()) {
+            movs.put(cafedra.getId(), cafedra.getName());
+        }
 
     }
     @RequestMapping(value = "/get/list", method = RequestMethod.GET)
@@ -54,9 +58,7 @@ public class GroupWebController {
     @RequestMapping(value = "/create", method = RequestMethod.GET)
     public String createGroup(Model model){
         GroupForm groupForm = new GroupForm();
-        for (Cafedra cafedra:cafedraService.getAll()) {
-            movs.put(cafedra.getId(), cafedra.getName());
-        }
+
         model.addAttribute("movs",movs);
         model.addAttribute("groupForm", groupForm);
         return "addGroup";
@@ -69,6 +71,33 @@ public class GroupWebController {
         group.setDesc(groupForm.getDesc());//устанавливаем ей значение описания из формы
         group.setCafedra(groupForm.getCafedra());//устанавливаем  нашей группе значение новой кафедры
         groupService.create(group);
+        model.addAttribute("groups", groupService.getAll());
+        return "redirect:/web/group/get/list";
+    }
+
+   @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
+    public String updateGroup(@PathVariable("id") String id,Model model) {
+        Group group = groupService.get(id);
+
+        GroupForm groupForm = new GroupForm(
+                group.getId(),
+                group.getName(),
+                group.getDesc(),
+                group.getCafedra()
+        );
+        model.addAttribute("movs",movs);
+        model.addAttribute("groupForm", groupForm);
+        return "addGroup";
+    }
+    @RequestMapping(value = "/update/{id}", method = RequestMethod.POST)
+    public String updateGroup(Model model,@PathVariable("id") String id, @ModelAttribute("groupForm") GroupForm groupForm){
+        Group group = new Group();
+        group.setId(id);
+        group.setName(groupForm.getName());
+        group.setDesc(groupForm.getDesc());
+        group.setCafedra(groupForm.getCafedra());
+        groupService.update(group);
+
         model.addAttribute("groups", groupService.getAll());
         return "redirect:/web/group/get/list";
     }

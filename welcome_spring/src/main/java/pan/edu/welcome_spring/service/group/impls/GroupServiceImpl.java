@@ -60,7 +60,8 @@ public class GroupServiceImpl implements IGroupService {
 
     @Override
     public Group update(Group group) {
-        return null;
+        group.setUpdatedAt(LocalDateTime.now());
+        return groupRepository.save(group);
     }
 
     @Override

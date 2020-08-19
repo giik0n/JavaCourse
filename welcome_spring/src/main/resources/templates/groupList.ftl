@@ -19,6 +19,7 @@
             <th>Name</th>
             <th>Description </th>
             <th>Cafedra</th>
+            <th>Update</th>
             <th>Delete</th>
         </tr>
         <#list list as item>
@@ -26,7 +27,10 @@
                 <td>${item.name}</td>
                 <td>${item.desc}</td>
                 <td>${item.cafedra.name}</td>
-                <td><a href="http://localhost:8080/web/group/delete/${item.id}">
+                <td><a href="http://localhost:8080/web/group/update/${item.id}">
+                        <input type="button" value="update" class="btn-primary">
+                    </a>
+                </td><td><a href="http://localhost:8080/web/group/delete/${item.id}">
                         <input type="button" value="delete" class="btn-danger">
                     </a> </td>
             </tr>
